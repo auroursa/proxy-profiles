@@ -1,0 +1,3 @@
+# Github
+host-suffix, github.com, proxy
+host-suffix, github.io, proxy
