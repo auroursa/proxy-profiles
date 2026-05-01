@@ -1,0 +1,6 @@
+# Apple Push Notification service (APNs)
+host, init-p01md.apple.com, APNs
+host-wildcard, init*.push.apple.com, APNs
+host-wildcard, init*.push-apple.com.akadns.net, APNs
+host-suffix, courier-push-apple.com.akadns.net, APNs
+host-suffix, push.apple.com, APNs
