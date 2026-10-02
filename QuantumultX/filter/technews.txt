@@ -1,2 +1,2 @@
-# TechNews
-host-suffix, technews.tw, proxy
+# Personal TechNews override; placed before Global.
+host-suffix, technews.tw, Global

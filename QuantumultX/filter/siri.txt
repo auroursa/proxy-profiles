@@ -1,0 +1,6 @@
+# Siri/search and related service endpoints, separated from AI relay traffic.
+# These domains are not exclusive to AI; routing alone does not unlock features.
+host-suffix, guzzoni.apple.com, Siri
+host-suffix, smoot.apple.com, Siri
+host, api-siri-prod.apple.com, Siri
+host, gspe1-ssl.ls.apple.com, Siri

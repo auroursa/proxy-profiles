@@ -1,3 +1,15 @@
-# Github
-host-suffix, github.com, proxy
-host-suffix, github.io, proxy
+# GitHub web, assets, downloads, packages and Copilot.
+# Explicit scope: npm and generic cloud/storage domains use their normal policy.
+host-suffix, github.com, GitHub
+host-suffix, github.io, GitHub
+host-suffix, github.dev, GitHub
+host-suffix, githubusercontent.com, GitHub
+host-suffix, githubassets.com, GitHub
+host-suffix, githubapp.com, GitHub
+host-suffix, githubcopilot.com, GitHub
+host-suffix, githubnext.com, GitHub
+host-suffix, githubpreview.dev, GitHub
+host-suffix, githubstatus.com, GitHub
+host-suffix, ghcr.io, GitHub
+host-suffix, git.io, GitHub
+host, github-cloud.s3.amazonaws.com, GitHub

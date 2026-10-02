@@ -1,0 +1,19 @@
+# Dedicated ChatGPT/API/assets/voice endpoints; reviewed 2026-10-02.
+# Avoid shared provider suffixes (stripe.com, sentry.io, auth0.com) and whole ASNs.
+host-suffix, openai.com, OpenAI
+host-suffix, chatgpt.com, OpenAI
+host-suffix, ai.com, OpenAI
+host-suffix, oaistatic.com, OpenAI
+host-suffix, oaiusercontent.com, OpenAI
+host, chat.openai.com.cdn.cloudflare.net, OpenAI
+host, openai-api.arkoselabs.com, OpenAI
+host, client-api.arkoselabs.com, OpenAI
+host, challenges.cloudflare.com, OpenAI
+host-suffix, chatgpt.livekit.cloud, OpenAI
+host, host.livekit.cloud, OpenAI
+host, turn.livekit.cloud, OpenAI
+host, openaicom-api-bdcpf8c6d2e9atf6.z01.azurefd.net, OpenAI
+host, openaicomproductionae4b.blob.core.windows.net, OpenAI
+host, production-openaicom-storage.azureedge.net, OpenAI
+host, openaiapi-site.azureedge.net, OpenAI
+host, openaicom.imgix.net, OpenAI

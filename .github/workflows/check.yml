@@ -1,0 +1,25 @@
+name: Check Quantumult X profiles
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-python@v7
+        with:
+          python-version: '3.12'
+      - name: Validate local configuration
+        run: python scripts/check_profiles.py
+      - name: Test routing safeguards and redirect boundaries
+        run: python -m unittest discover -s tests -v
+      - name: Validate upstream resources and scripts
+        run: python scripts/check_profiles.py --online
