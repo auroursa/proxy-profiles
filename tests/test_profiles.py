@@ -68,6 +68,10 @@ class ProfileTests(unittest.TestCase):
         self.assertNotIn("apps.mzstatic.com", {v for _, v, _ in ai})
         _, openai = checker.filter_rules((ROOT / "QuantumultX/filter/openai.txt").read_text(), {"OpenAI"})
         self.assertFalse(any(k == "ip-asn" or v in {"stripe.com", "sentry.io", "auth0.com"} for k, v, _ in openai))
+        _, anthropic = checker.filter_rules((ROOT / "QuantumultX/filter/anthropic.txt").read_text(), {"Anthropic"})
+        self.assertTrue({"anthropic.com", "claude.ai", "claude.com", "claudeusercontent.com",
+                         "claudemcpclient.com", "claudemcpcontent.com"} <= {v for _, v, _ in anthropic})
+        self.assertFalse(any(k == "ip-asn" or v in {"b-cdn.net", "usefathom.com"} for k, v, _ in anthropic))
 
 
 class RedirectTests(unittest.TestCase):

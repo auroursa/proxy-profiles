@@ -3,7 +3,7 @@
 Customized Quantumult X rules and optional rewrites by Frudrax. Inspired by Steven.
 
 配置面向中国大陆网络：国内服务和 APNs 默认直连，海外服务默认走手动代理，
-Apple Intelligence、Siri、OpenAI、GitHub 与媒体可以分别选择出口。
+Apple Intelligence、Siri、OpenAI、Anthropic、GitHub 与媒体可以分别选择出口。
 2026-10-02 按官方 **v1.5.5 build 914** 示例核对；建议使用该版本或更新版本。
 这是一份配置模板，不包含可用节点、订阅凭据或 MITM 证书。
 
@@ -31,7 +31,7 @@ Apple Intelligence、Siri、OpenAI、GitHub 与媒体可以分别选择出口。
 | Apple、APNs | direct | 常规 Apple 服务、下载与推送 |
 | AppleIntelligence | Manual | AI／Private Cloud Compute relay 域名 |
 | Siri | Manual | Siri、搜索及相关端点；与 AI relay 分开控制 |
-| OpenAI、GitHub | Manual | API、网页、资源、语音／开发服务 |
+| OpenAI、Anthropic、GitHub | Manual | API、网页、资源、语音／开发服务 |
 | Google、Microsoft、Telegram、Twitter | Manual | 各服务整体出口 |
 | ForeignMedia | Manual | 固定出口，按需要选择地区合适的节点 |
 | DomesticMedia、China | direct | 国内媒体和国内域名／GeoIP CN |
@@ -41,7 +41,7 @@ Apple Intelligence、Siri、OpenAI、GitHub 与媒体可以分别选择出口。
 `Auto` 是可选项，默认业务出口不自动切换。其节点候选由名称正则 `^.+$` 收集；
 导入订阅后确认候选列表，必要时修改正则，排除到期提示／流量说明等条目。
 地区组需要根据你的真实节点名称创建，模板不预设可能为空的地区组。
-AppleIntelligence、Siri、OpenAI、GitHub 和 ForeignMedia 也会列出节点，可直接选择各自的固定节点，
+AppleIntelligence、Siri、OpenAI、Anthropic、GitHub 和 ForeignMedia 也会列出节点，可直接选择各自的固定节点，
 不必共用 Manual 的选择。例如 OpenAI 选一个节点，ForeignMedia 选另一个地区的节点。
 测速成功不等于 AI 或媒体解锁成功，也不等于节点支持 UDP。
 
@@ -55,7 +55,7 @@ AppleIntelligence、Siri、OpenAI、GitHub 和 ForeignMedia 也会列出节点�
 
 ```text
 LAN
-→ APNs → AppleIntelligence → Siri → OpenAI → GitHub → TechNews
+→ APNs → AppleIntelligence → Siri → OpenAI → Anthropic → GitHub → TechNews
 → Telegram → Twitter → ForeignMedia → DomesticMedia
 → Google → Microsoft → Apple
 → Global → China
@@ -124,6 +124,7 @@ python3 scripts/check_profiles.py --online
 - 私网访问正常，APNs 推送命中 APNs／direct。
 - GitHub 网页、图片、raw 文件、Release 下载和 ghcr.io 命中 GitHub。
 - `x.com` 命中 Twitter；OpenAI 登录、API、附件和语音分别可用。
+- Claude 网页、`api.anthropic.com`、内容资源与 MCP 域名命中 Anthropic，可独立选择固定节点。
 - AI relay 命中 AppleIntelligence；Siri 命中 Siri；普通 Apple 下载命中 Apple。
 - 国内媒体、国内域名走预期出口；未命中请求使用 Final。
 - 改变 Global／China／Final 选择后，对新连接查看请求记录，确认策略实际生效。

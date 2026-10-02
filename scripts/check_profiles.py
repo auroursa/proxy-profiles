@@ -172,7 +172,7 @@ def validate(root):
                     jobs.append((url, section, opts.get("force-policy")))
             except (ValueError, OSError) as exc:
                 errors.append(f"{section} line {n}: {exc}")
-    expected = ["LAN", "APNs", "AppleIntelligence", "Siri", "OpenAI", "GitHub", "TechNews",
+    expected = ["LAN", "APNs", "AppleIntelligence", "Siri", "OpenAI", "Anthropic", "GitHub", "TechNews",
                 "Telegram", "Twitter", "ForeignMedia", "DomesticMedia", "Google", "Microsoft", "Apple", "Global", "China"]
     if filter_tags != expected:
         errors.append("resource order differs from reviewed LAN/service/Global/China order")

@@ -1,0 +1,11 @@
+# Anthropic / Claude web, API, content and MCP endpoints; reviewed 2026-10-02.
+# Dedicated domains only; shared analytics/CDN providers are not routed wholesale.
+# Sources and scope: docs/sources.md.
+host-suffix, anthropic.com, Anthropic
+host-suffix, claude.ai, Anthropic
+host-suffix, claude.com, Anthropic
+host-suffix, clau.de, Anthropic
+host-suffix, claudeusercontent.com, Anthropic
+host-suffix, claudemcpclient.com, Anthropic
+host-suffix, claudemcpcontent.com, Anthropic
+host, servd-anthropic-website.b-cdn.net, Anthropic

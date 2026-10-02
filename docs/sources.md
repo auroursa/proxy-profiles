@@ -48,6 +48,12 @@
   不将整个 ASN 或 `stripe.com`、`sentry.io`、`auth0.com` 等共享后缀交给 OpenAI。
   `challenges.cloudflare.com`、`client-api.arkoselabs.com`、`host.livekit.cloud` 和
   `turn.livekit.cloud` 仍可能服务其他产品：这些精确主机也会走 OpenAI，已知影响限定在相应主机。
+- `anthropic.txt`：参考 [blackmatrix7 Anthropic.list](https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/Anthropic/Anthropic.list)
+  和 [MetaCubeX anthropic.list](https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/anthropic.list)，
+  并对照 [Anthropic 官方网络访问控制说明](https://support.claude.com/en/articles/13198485-enforce-network-level-access-control-with-tenant-restrictions)。
+  覆盖 anthropic.com（含 API／Console）、claude.ai、claude.com、clau.de、用户内容与 MCP 专用域名；
+  官网 CDN 仅使用 `servd-anthropic-website.b-cdn.net` 精确主机，不引入整个 b-cdn.net 或共享统计域名。
+  位于通用服务和 Global 前，默认 Manual，可在 Anthropic 策略中直接选择独立节点。
 - `technews.txt`：个人覆盖，绑定 Global 并置于通用规则前。
 
 ## 脚本和重写
